@@ -82,5 +82,7 @@ class link(object):
                 raise ValueError("Data not in list")
             if previous is None and found:
                 self.head = current.getNext()
+                current = None
             elif previous is not None and found:
                 previous.setNext(current.getNext())
+                current = None
