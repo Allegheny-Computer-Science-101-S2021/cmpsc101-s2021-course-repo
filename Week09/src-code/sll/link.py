@@ -77,12 +77,18 @@ class link(object):
                 found = True
             else:
                 previous = current
-                current = current.getNext()
+                current = current.getNext() # traversing the list 
             if current is None:
                 raise ValueError("Data not in list")
-            if previous is None and found:
+            if previous is None and found: # deleting the first node. 
                 self.head = current.getNext()
-                current = None
-            elif previous is not None and found:
+                current = None # free up the space
+            elif previous is not None and found: # deleting any node other than the first node
                 previous.setNext(current.getNext())
                 current = None
+
+
+
+
+
+

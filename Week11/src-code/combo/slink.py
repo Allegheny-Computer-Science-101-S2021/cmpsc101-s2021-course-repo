@@ -1,15 +1,13 @@
-from node import node;
-class link(object):
+from snode import snode;
+class slink(object):
     def __init__(self, head=None):
         self.head = head
     def insert(self, data):
-        new = node(data)
+        new = snode(data)
         new.setNext(self.head)
         self.head = new
-    
-    '''
     def insertE(self, data):
-        new = node(data)
+        new = snode(data)
         if (self.head == None): # if linked list is empty to start with
             self.head = new
         else:
@@ -20,11 +18,8 @@ class link(object):
                     break;
                 else:
                     current = current.getNext()                 
-    
-    '''
-    '''
     def insertP(self, pos, data):
-        new = node(data)
+        new = snode(data)
         if (self.head == None): # if linked list is empty to start with
             self.head = new
         else:
@@ -39,37 +34,26 @@ class link(object):
                     temp += 1
                 new.setNext(current.getNext())
                 current.setNext(new)
-    '''
-    def reverse(self):
-        prev = None
-        current = self.head
-        while(current is not None):
-            next = current.next
-            current.next = prev
-            prev = current
-            current = next
-        self.head = prev
-        
-
-
     def size(self):
         current = self.head
         count = 0
         while current:
             count += 1
             current = current.getNext()
-            return count
+        return count
     def search(self, data):
         current = self.head
         found = False
+        pos = 0
         while current and found is False:
             if current.getData() == data:
                 found = True
             else:
                 current = current.getNext()
+                pos += 1
             if current is None:
-                raise ValueError("Data not in list")
-        return current
+                return -1
+        return pos
     def display(self):
         current = self.head
         while (current):

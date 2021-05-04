@@ -1,30 +1,29 @@
 from link import link
-sll = link();
+dll = link();
 for no in range(0, 10):
-	sll.insert(no)
-sll.display()
-sll.reverse()
-sll.display()
+	dll.insertF(no)
+dll.displayF()
+
 '''
-sll.insertP(10,9.5)
-sll.display()
+dll.insertP(10,0.5)
+dll.displayR()
 '''
 
 '''
 # print head
-print(sll.head.getData())
+print(dll.head.getData())
 '''
 
 '''
 # delete in reverse order. 
 for no in range(0,10):
-	sll.delete(no)
-sll.display()
+	dll.delete(no)
+dll.displayR()
 '''
 
 '''
 # delete in forward order. 
 for no in range(9,-1,-1):
-	sll.delete(no)
-sll.display()
+	dll.delete(no)
+dll.displayR()
 '''

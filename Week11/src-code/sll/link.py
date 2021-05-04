@@ -40,17 +40,6 @@ class link(object):
                 new.setNext(current.getNext())
                 current.setNext(new)
     '''
-    def reverse(self):
-        prev = None
-        current = self.head
-        while(current is not None):
-            next = current.next
-            current.next = prev
-            prev = current
-            current = next
-        self.head = prev
-        
-
 
     def size(self):
         current = self.head
@@ -58,7 +47,7 @@ class link(object):
         while current:
             count += 1
             current = current.getNext()
-            return count
+        return count
     def search(self, data):
         current = self.head
         found = False
